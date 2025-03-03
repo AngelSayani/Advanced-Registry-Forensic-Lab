@@ -1,6 +1,6 @@
 # Registry Forensics Lab: Exercises and Tasks
 
-This document provides a series of hands-on exercises and tasks to complete throughout the Registry Forensics Lab. These exercises are designed to reinforce your understanding of registry-based persistence techniques and forensic analysis.
+This lab provides a series of hands-on exercises and tasks to complete throughout the Registry Forensics Lab. These exercises are designed to reinforce your understanding of registry-based persistence techniques and forensic analysis.
 
 ## Phase 1: Environment Setup
 
@@ -19,7 +19,7 @@ This document provides a series of hands-on exercises and tasks to complete thro
 
 **Learning Objective:** Understand how configuration settings in a security tool affect detection capabilities.
 
-## Phase 1.5: Cloud Infrastructure Review
+## Phase 2: Cloud Infrastructure Review
 
 ### Exercise 2: Review Cloud Deployment Option
 
@@ -49,7 +49,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Understand how on-premises forensic concepts translate to cloud environments and identify security considerations in infrastructure-as-code.
 
-## Phase 2: Artifact Creation
+## Phase 3: Artifact Creation
 
 ### Exercise 3: Create Custom Persistence Mechanisms
 
@@ -60,7 +60,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Understand how attackers establish various persistence mechanisms in Windows Registry.
 
-## Phase 3: Forensic Analysis
+## Phase 4: Forensic Analysis
 
 ### Exercise 4: Identify Malicious Registry Entries
 
@@ -74,7 +74,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Develop skills in identifying suspicious registry entries and understanding attack indicators.
 
-## Phase 4: Registry Differential Analysis
+## Phase 5: Registry Differential Analysis
 
 ### Exercise 5: Compare Registry States
 
@@ -87,7 +87,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Learn how to identify changes in the registry that might indicate malicious activity.
 
-## Phase 5: Evidence Collection
+## Phase 6: Evidence Collection
 
 ### Exercise 6: Document Findings
 
@@ -103,7 +103,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Practice proper documentation of security findings for incident response.
 
-## Phase 6: Guided Analysis
+## Phase 7: Guided Analysis
 
 ### Exercise 7: Follow a Structured Analysis
 
@@ -119,7 +119,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Develop a methodical approach to security investigation following industry best practices.
 
-## Phase 7: Validation and Verification
+## Phase 8: Validation and Verification
 
 ### Exercise 8: Validate Findings
 
@@ -130,7 +130,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Verify the completeness of a security investigation to ensure no threats are missed.
 
-## Phase 8: Cloud Security Considerations
+## Phase 9: Cloud Security Considerations
 
 ### Exercise 9: Apply On-premises Findings to Cloud Security
 
