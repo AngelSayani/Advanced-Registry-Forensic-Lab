@@ -100,14 +100,14 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
 4. **Set PowerShell Execution Policy**
    - Type: `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`
    - Press Enter
-   - Type "Y" when prompted to confirm
+   - Type "A" when prompted to confirm
 
 5. **Run the Setup Script**
    - Type: `.\setup.ps1`
    - Press Enter
    - The script will automatically set up the lab environment
 
-### Phase 1.5: Cloud Infrastructure Review
+### Phase 2: Cloud Infrastructure Review
 
 6. **Review the Terraform Files**
    - Open the `terraform` folder in your lab directory
@@ -137,7 +137,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
    }
    ```
 
-### Phase 2: Creating Artifacts
+### Phase 3: Creating Artifacts
 
 9. **Run the Artifacts Creation Script**
    - Type: `.\create_artifacts.ps1`
@@ -152,7 +152,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
      - Select your answer (1-4) for each question
      - Your quiz results will be saved automatically
 
-### Phase 3: Learning Persistence Techniques
+### Phase 4: Learning Persistence Techniques
 
 10. **Study Registry Persistence Methods**
    - Type: `.\persistence_simulator.ps1`
@@ -163,7 +163,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
      - Observe the examples and detection methods
    - Keep the PowerShell window open or take notes for reference
 
-### Phase 4: Conducting the Investigation
+### Phase 5: Conducting the Investigation
 
 11. **Follow the Guided Analysis**
    - Type: `.\analysis_guide.ps1`
@@ -199,7 +199,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
        * Review the detailed analysis of this value
    - Exit the tool by selecting option 10 when done
 
-### Phase 5: Collecting and Documenting Evidence
+### Phase 6: Collecting and Documenting Evidence
 
 13. **Collect Evidence**
     - Type: `.\evidence_collector.ps1`
@@ -236,7 +236,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
     - If your score is below 70%, go back to evidence collection
     - If your score is 70% or higher, proceed to the next step
 
-### Phase 6: Apply Findings to Cloud Security
+### Phase 7: Apply Findings to Cloud Security
 
 16. **Improve Cloud Infrastructure Security**
     - Based on your registry forensics findings, open: `terraform/security_improvements.tf`
@@ -263,7 +263,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
     - Check that your security improvements are recognized
     - Your score should increase if they are properly implemented
 
-### Phase 7: Cleanup and Reflection
+### Phase 8: Cleanup and Reflection
 
 18. **Clean up the Lab Environment**
     - Type: `.\cleanup.ps1`
@@ -292,7 +292,7 @@ This lab has been designed to be completely safe for your host system. All regis
 
 ## Expected Completion Time
 
-The lab is designed to take approximately 15 minutes to complete once the environment is set up. However, you can spend additional time exploring the simulated artifacts and learning about registry-based persistence techniques.
+The lab is designed to take approximately 25-30 minutes to complete once the environment is set up. However, you can spend additional time exploring the simulated artifacts and learning about registry-based persistence techniques.
 
 ## Success Criteria
 
@@ -310,3 +310,5 @@ If you encounter any issues with the lab, please check the following:
 1. Ensure you're running PowerShell as Administrator
 2. Verify that all the lab files are in the same directory
 3. Make sure you run the scripts in the recommended order
+
+Good luck, security analyst! Globomantics is counting on you to uncover the Dark Kittens' secrets.
