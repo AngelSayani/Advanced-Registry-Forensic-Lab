@@ -3,7 +3,8 @@
 # Display header
 Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host "Registry Forensics Lab: Tracking the Dark Kittens" -ForegroundColor Cyan
-Write-Host "Setup Script (Fixed Version)" -ForegroundColor Cyan
+Write-Host "Advanced Technical Lab by Angel Sayani" -ForegroundColor Cyan
+Write-Host "Setup " -ForegroundColor Cyan
 Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host ""
 
