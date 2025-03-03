@@ -2,43 +2,58 @@
 
 This lab provides a series of hands-on exercises and tasks to complete throughout the Registry Forensics Lab. These exercises are designed to reinforce your understanding of registry-based persistence techniques and forensic analysis.
 
-## Phase 1: Environment Setup
+## Lab Execution Step-by-Step Guide
 
-### Exercise 1: Configure Lab Environment
+Follow these detailed steps to complete the lab. Each step includes specific instructions on what to do and how to do it.
 
-1. Run `setup.ps1` as Administrator
-2. Create three new folders under the lab directory:
-   - `Registry-based` - For registry persistence artifacts
-   - `File-based` - For file-based persistence artifacts
-   - `WMI-based` - For WMI-based persistence artifacts
-3. Configure detection sensitivity in the registry to your preferred level:
-   - Low: Fewer detections, minimal false positives
-   - Medium: Balanced approach (recommended for beginners)
-   - High: Aggressive detection, may produce false positives
-4. Enable advanced detection by changing the registry value
+### Phase 1: Environment Setup
 
-**Learning Objective:** Understand how configuration settings in a security tool affect detection capabilities.
+1. **Download and Extract Lab Files**
+   - Create a folder named "RegistryForensicsLab" on your desktop
+   - Download all lab files to this folder
+   - Make sure all files have .ps1 extension (except README.md and LAB_EXERCISES.md)
 
-## Phase 2: Cloud Infrastructure Review
+2. **Open PowerShell as Administrator**
+   - Right-click on the Start menu
+   - Select "Windows PowerShell (Admin)"
+   - When the UAC prompt appears, click "Yes"
 
-### Exercise 2: Review Cloud Deployment Option
+3. **Navigate to Lab Directory**
+   - Type: `cd "C:\Registry Forensics Lab"`
+   - Press Enter
 
-Before proceeding to create artifacts, review the Terraform files in the `terraform/` directory to understand how this lab could be deployed in a cloud environment.
+4. **Set PowerShell Execution Policy**
+   - Type: `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`
+   - Press Enter
+   - Type "A" when prompted to confirm
 
-1. Open and review the following files:
-   - `terraform/main.tf` - Main infrastructure definition
-   - `terraform/variables.tf` - Configuration variables
-   - `terraform/security.tf` - Security settings
-   - `terraform/outputs.tf` - Outputs and connection information
+5. **Run the Setup Script**
+   - Type: `.\setup.ps1`
+   - Press Enter
+   - The script will automatically set up the lab environment
 
-2. Create a file named `terraform/review_answers.txt` and answer the following questions:
-   - What EC2 instance type is being used for the lab workstation?
-   - What security risks can you identify in the security.tf file?
-   - How would you improve the security of this cloud deployment?
-   - Why would a cloud deployment be useful for this type of lab?
-   - What additional AWS services could enhance security monitoring?
+### Phase 2: Cloud Infrastructure Review
 
-3. Run this PowerShell command to verify your completion of this task:
+6. **Review the Terraform Files**
+   - Open the `terraform` folder in your lab directory
+   - Open each of these files in a text editor (like Notepad++ or VS Code):
+     - `main.tf` - Main infrastructure definition, review the AWS resources being deployed
+     - `variables.tf` - Configuration variables, look at the configuration variables
+     - `security.tf` -  Security settings, examine the security settings carefully
+     - `outputs.tf` - Outputs and connection information, understand what information is provided after deployment
+
+7. **Create Review Answers**
+   - Create a new text file: `terraform/review_answers.txt`
+   - Answer these specific questions in the file:
+     - What EC2 instance type is being used for the lab workstation?
+     - What security risks can you identify in the security.tf file?
+     - How would you improve the security of this cloud deployment?
+     - Why would a cloud deployment be useful for this type of lab?
+     - What additional AWS services could enhance security monitoring?
+   - Save the file
+
+8. **Verify Terraform Review Completion**
+   - Run this PowerShell command to verify:
    ```powershell
    if (Test-Path "./terraform/review_answers.txt") { 
      Write-Host "Cloud infrastructure review completed!" -ForegroundColor Green 
@@ -47,36 +62,147 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
    }
    ```
 
-**Learning Objective:** Understand how on-premises forensic concepts translate to cloud environments and identify security considerations in infrastructure-as-code.
+### Phase 3: Creating Artifacts
 
-## Phase 3: Artifact Creation
+9. **Run the Artifacts Creation Script**
+   - Type: `.\create_artifacts.ps1`
+   - Press Enter
+   - When prompted to create a custom run key:
+     - Enter a name for your run key (e.g., "SystemUpdate"), to create your own malicious run key entry when prompted
+     - Choose a payload type (1, 2, or 3)
+   - When prompted to create a file association hijack:
+     - Choose a file extension from the options (1-5) to create a file association hijack for a file extension of your choice
+     - Enter your custom command or press Enter for default
+   - Complete the quiz by answering each question (take the persistence techniques quiz)
+     - Select your answer (1-4) for each question 
+     - Your quiz results will be saved automatically
 
-### Exercise 3: Create Custom Persistence Mechanisms
+### Phase 4: Learning Persistence Techniques
 
-1. Run `create_artifacts.ps1` as Administrator
-2. Create your own malicious run key entry when prompted
-3. Create a file association hijack for a file extension of your choice
-4. Take the persistence techniques quiz
+10. **Study Registry Persistence Methods**
+   - Type: `.\persistence_simulator.ps1`
+   - Press Enter
+   - For each persistence technique shown:
+     - Read the description carefully
+     - Note the registry path and how it works
+     - Observe the examples and detection methods
+   - Keep the PowerShell window open or take notes for reference
 
-**Learning Objective:** Understand how attackers establish various persistence mechanisms in Windows Registry.
+### Phase 5: Conducting the Investigation
 
-## Phase 4: Forensic Analysis
+11. **Follow the Guided Analysis**
+   - Type: `.\analysis_guide.ps1`
+   - Press Enter
+   - For each step in the guided analysis:
+     - Read the instructions carefully
+     - Perform the required actions
+     - Answer any questions when prompted
+   - When asked to search for suspicious paths manually:
+     - Type or paste the provided PowerShell command
+     - Review the results and count the suspicious paths
+     - Enter the number when prompted
+   - When instructed to collect evidence:
+     - Type "Y" to run the evidence collector
+     - Follow the evidence collection process as guided
 
-### Exercise 4: Identify Malicious Registry Entries
+12. **Use the Forensic Tools**
+   - Type: `.\forensic_tools.ps1`
+   - Press Enter
+   - When the menu appears, try each of these tasks:
+     - Option 1: Examine Registry Key
+       * Enter: `HKCU:\Software\DarkKittensLab\Artifacts\RunKey`
+       * Review the results
+     - Option 3: Decode Base64 Value
+       * Copy the encoded command from the RunKey value
+       * Paste it when prompted
+       * Review the decoded command to understand what it does
+     - Option 8: Search for Suspicious Paths
+       * Review all paths flagged as suspicious
+     - Option 9: Check Value Data Type
+       * Enter: `HKCU:\Software\DarkKittensLab\Artifacts\RunKey`
+       * Enter: `GloboUpdater`
+       * Review the detailed analysis of this value
+   - Use the "Examine Registry Key" feature to inspect the following keys:
 
-1. Run `forensic_tools.ps1` as Administrator
-2. Use the "Search for Suspicious Paths" feature to identify potentially malicious paths
-3. Use the "Decode Base64 Value" feature to decode the encoded PowerShell command
-4. Use the "Examine Registry Key" feature to inspect the following keys:
-   - `HKCU:\Software\DarkKittensLab\Artifacts\RunKey`
-   - `HKCU:\Software\DarkKittensLab\Artifacts\Services\GloboSync`
-   - `HKCU:\Software\DarkKittensLab\Artifacts\FileAssoc`
+    HKCU:\Software\DarkKittensLab\Artifacts\RunKey
+    HKCU:\Software\DarkKittensLab\Artifacts\Services\GloboSync
+    HKCU:\Software\DarkKittensLab\Artifacts\FileAssoc
 
-**Learning Objective:** Develop skills in identifying suspicious registry entries and understanding attack indicators.
+   - Exit the tool by selecting option 10 when done
 
-## Phase 5: Registry Differential Analysis
+### Phase 6: Collecting and Documenting Evidence
 
-### Exercise 5: Compare Registry States
+13. **Collect Evidence**
+    - Type: `.\evidence_collector.ps1`
+    - Press Enter
+    - Select option 1 to collect evidence
+    - For the guided Run key evidence collection:
+      * Review the evidence information displayed
+      * Complete the evidence form with detailed information
+    - For the independent evidence collection:
+      * Choose another artifact (e.g., WinLogon or Services)
+      * Complete the evidence form:
+        - Step 1: Enter the correct registry path
+        - Step 2: Select the appropriate evidence type
+        - Step 3: Write a detailed description
+        - Step 4: Add your investigative notes
+    - Collect at least 3 different types of evidence
+    - Exit and return to the main menu
+
+14. **Generate an Evidence Report**
+    - In the evidence collector, select option 3
+    - Enter a title for your report (e.g., "Dark Kittens Incident - Registry Forensics Report")
+    - Enter your name as the investigator
+    - When the report is generated, it will open in your browser
+    - Review the report carefully
+    - Answer the reflection questions:
+      * What key information is included that management would need?
+      * How would you improve this report for a real-world scenario?
+
+   **Document Findings**
+   **Your evidence report should include:**
+   - Run key persistence mechanism
+   - Service-based persistence
+   - File association hijacking
+
+15. **Validate Your Findings**
+    - Return to PowerShell
+    - Type: `.\validation.ps1`
+    - Press Enter
+    - Review your score and identified techniques
+    - If your score is below 70%, go back to evidence collection
+    - If your score is 70% or higher, proceed to the next step
+
+### Phase 7: Apply Findings to Cloud Security
+
+16. **Improve Cloud Infrastructure Security**
+    - Based on your registry forensics findings, open: `terraform/security_improvements.tf`
+    - Review the example security resource at the top of the file
+    - Add at least three new Terraform resources that would enhance cloud security
+    - Focus on mitigating the persistence techniques you discovered in the lab
+    - Save your changes to the file
+    - Example improvement to add:
+    ```
+    resource "aws_config_configuration_recorder" "forensics_lab_recorder" {
+      name     = "forensics-lab-recorder"
+      role_arn = aws_iam_role.forensics_config_role.arn
+      recording_group {
+        all_supported = true
+        include_global_resource_types = true
+      }
+    }
+    ```
+
+17. **Verify Security Improvements**
+    - Run the validation script again:
+    - Type: `.\validation.ps1`
+    - Press Enter
+    - Check that your security improvements are recognized
+    - Your score should increase if they are properly implemented
+   
+## Phase 8: Registry Differential Analysis
+
+### Exercise 8: Compare Registry States
 
 1. Run `registry_diff.ps1` as Administrator
 2. Take a snapshot of the `HKCU:\Software\DarkKittensLab\Artifacts` registry key
@@ -87,25 +213,7 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Learn how to identify changes in the registry that might indicate malicious activity.
 
-## Phase 6: Evidence Collection
-
-### Exercise 6: Document Findings
-
-1. Run `evidence_collector.ps1` as Administrator
-2. Collect evidence for at least three different persistence mechanisms
-3. Generate an HTML evidence report with your findings
-4. Review the report to ensure all critical information is included
-
-**Your evidence report should include:**
-- Run key persistence mechanism
-- Service-based persistence
-- File association hijacking
-
-**Learning Objective:** Practice proper documentation of security findings for incident response.
-
-## Phase 7: Guided Analysis
-
-### Exercise 7: Follow a Structured Analysis
+### Exercise 9: Follow a Structured Analysis
 
 1. Run `analysis_guide.ps1` as Administrator
 2. Follow the guided analysis steps to investigate all persistence mechanisms
@@ -119,20 +227,9 @@ Before proceeding to create artifacts, review the Terraform files in the `terraf
 
 **Learning Objective:** Develop a methodical approach to security investigation following industry best practices.
 
-## Phase 8: Validation and Verification
+## Phase 10: Cloud Security Considerations
 
-### Exercise 8: Validate Findings
-
-1. Complete all previous exercises
-2. Run `validation.ps1` as Administrator
-3. Ensure you've identified at least 5 different persistence techniques
-4. Aim for a score of at least 70%
-
-**Learning Objective:** Verify the completeness of a security investigation to ensure no threats are missed.
-
-## Phase 9: Cloud Security Considerations
-
-### Exercise 9: Apply On-premises Findings to Cloud Security
+### Exercise 10: Apply On-premises Findings to Cloud Security
 
 1. Based on your registry forensics investigation, open the file `terraform/security_improvements.tf` in a text editor
 2. Write at least three Terraform resources that would enhance the security of the cloud deployment
@@ -149,9 +246,23 @@ resource "aws_guardduty_detector" "forensics_lab_detector" {
 
 **Learning Objective:** Translate on-premises security findings to cloud security improvements.
 
-## Challenge Exercise: Create Your Own Detection
+### Phase 11: Cleanup and Reflection
 
-This exercise is for advanced learners who want to go beyond the basics.
+18. **Clean up the Lab Environment**
+    - Type: `.\cleanup.ps1`
+    - Press Enter
+    - Type "Y" when prompted to confirm cleanup
+    - Note that your evidence reports will be preserved in your Documents folder
+
+19. **Final Steps**
+    - Review your quiz results and evidence report
+    - Compare your findings with the expected persistence techniques
+    - Complete any tasks in the LAB_EXERCISES.md file you haven't finished
+
+
+## Optional Challenge Exercise: Create Your Own Detection
+
+This exercise is for advanced learners who want to go beyond what we've learned so far.
 
 1. Create a new PowerShell script called `custom_detection.ps1`
 2. Write code to detect one of the persistence mechanisms not explicitly covered in the lab
