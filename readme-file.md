@@ -12,7 +12,7 @@ This lab is designed to run entirely on a Windows 10 Home system with PowerShell
 
 ## Prerequisites
 
-- Windows 10 Home (or any edition)
+- Windows 8, 10 Home (or any edition) or later version of Windows
 - PowerShell 5.1 or later
 - Administrator access to your local machine
 
@@ -112,10 +112,10 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
 6. **Review the Terraform Files**
    - Open the `terraform` folder in your lab directory
    - Open each of these files in a text editor (like Notepad++ or VS Code):
-     - `main.tf` - Review the AWS resources being deployed
-     - `variables.tf` - Look at the configuration variables
-     - `security.tf` - Examine the security settings carefully
-     - `outputs.tf` - Understand what information is provided after deployment
+     - `main.tf` - Main infrastructure definition, review the AWS resources being deployed
+     - `variables.tf` - Configuration variables, look at the configuration variables
+     - `security.tf` -  Security settings, examine the security settings carefully
+     - `outputs.tf` - Outputs and connection information, understand what information is provided after deployment
 
 7. **Create Review Answers**
    - Create a new text file: `terraform/review_answers.txt`
@@ -143,13 +143,13 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
    - Type: `.\create_artifacts.ps1`
    - Press Enter
    - When prompted to create a custom run key:
-     - Enter a name for your run key (e.g., "SystemUpdate")
+     - Enter a name for your run key (e.g., "SystemUpdate"), to create your own malicious run key entry when prompted
      - Choose a payload type (1, 2, or 3)
    - When prompted to create a file association hijack:
-     - Choose a file extension from the options (1-5)
+     - Choose a file extension from the options (1-5) to create a file association hijack for a file extension of your choice
      - Enter your custom command or press Enter for default
-   - Complete the quiz by answering each question
-     - Select your answer (1-4) for each question
+   - Complete the quiz by answering each question (take the persistence techniques quiz)
+     - Select your answer (1-4) for each question 
      - Your quiz results will be saved automatically
 
 ### Phase 4: Learning Persistence Techniques
@@ -197,6 +197,12 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
        * Enter: `HKCU:\Software\DarkKittensLab\Artifacts\RunKey`
        * Enter: `GloboUpdater`
        * Review the detailed analysis of this value
+   - Use the "Examine Registry Key" feature to inspect the following keys:
+
+    HKCU:\Software\DarkKittensLab\Artifacts\RunKey
+    HKCU:\Software\DarkKittensLab\Artifacts\Services\GloboSync
+    HKCU:\Software\DarkKittensLab\Artifacts\FileAssoc
+
    - Exit the tool by selecting option 10 when done
 
 ### Phase 6: Collecting and Documenting Evidence
@@ -227,6 +233,12 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
     - Answer the reflection questions:
       * What key information is included that management would need?
       * How would you improve this report for a real-world scenario?
+
+   **Document Findings**
+   **Your evidence report should include:**
+   - Run key persistence mechanism
+   - Service-based persistence
+   - File association hijacking
 
 15. **Validate Your Findings**
     - Return to PowerShell
@@ -262,8 +274,54 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
     - Press Enter
     - Check that your security improvements are recognized
     - Your score should increase if they are properly implemented
+   
+## Phase 8: Registry Differential Analysis
 
-### Phase 8: Cleanup and Reflection
+### Exercise 8: Compare Registry States
+
+1. Run `registry_diff.ps1` as Administrator
+2. Take a snapshot of the `HKCU:\Software\DarkKittensLab\Artifacts` registry key
+3. Create a simple modification to the registry (add a new value or modify an existing one)
+4. Take another snapshot
+5. Compare the two snapshots to see the differences
+6. Export the registry structure to CSV for examination
+
+**Learning Objective:** Learn how to identify changes in the registry that might indicate malicious activity.
+
+### Exercise 9: Follow a Structured Analysis
+
+1. Run `analysis_guide.ps1` as Administrator
+2. Follow the guided analysis steps to investigate all persistence mechanisms
+3. Answer the analysis questions at each step
+4. Make sure to manually examine keys rather than just accepting the automated analysis
+
+**Questions to answer during analysis:**
+1. What indicators suggest the Run key entry is malicious?
+2. How does file association hijacking work to maintain persistence?
+3. What makes the WinLogon helper DLL suspicious?
+
+**Learning Objective:** Develop a methodical approach to security investigation following industry best practices.
+
+## Phase 10: Cloud Security Considerations
+
+### Exercise 10: Apply On-premises Findings to Cloud Security
+
+1. Based on your registry forensics investigation, open the file `terraform/security_improvements.tf` in a text editor
+2. Write at least three Terraform resources that would enhance the security of the cloud deployment
+3. Focus on how the persistence techniques you discovered in the lab could be mitigated in a cloud environment
+4. Save your changes
+
+Example resource to get you started:
+```terraform
+# Example: Add a security monitoring solution
+resource "aws_guardduty_detector" "forensics_lab_detector" {
+  enable = true
+}
+```
+
+**Learning Objective:** Translate on-premises security findings to cloud security improvements.
+
+### Phase 11: Cleanup and Reflection
 
 18. **Clean up the Lab Environment**
     - Type: `.\cleanup.ps1`
