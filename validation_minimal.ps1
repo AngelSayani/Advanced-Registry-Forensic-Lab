@@ -1,4 +1,4 @@
-# validation_minimal.ps1
+
 
 Write-Host "Starting validation..." -ForegroundColor Green
 
