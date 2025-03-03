@@ -1,6 +1,6 @@
 # Registry Forensics Lab: Exercises and Tasks
 
-This lab provides a series of hands-on exercises and tasks to complete throughout the Registry Forensics Lab. These exercises are designed to reinforce your understanding of registry-based persistence techniques and forensic analysis.
+This advanced lab provides a series of hands-on exercises and tasks to complete throughout the Registry Forensics Lab. These exercises are designed to reinforce your understanding of registry-based persistence techniques and forensic analysis.
 
 ## Lab Execution Step-by-Step Guide
 
