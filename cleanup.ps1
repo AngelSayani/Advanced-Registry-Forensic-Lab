@@ -3,7 +3,7 @@
 # This script safely removes all test registry keys and restores the system to its original state
 
 Write-Host "========================================================" -ForegroundColor Cyan
-Write-Host "Registry Forensics Lab: Tracking the Dark Kittens" -ForegroundColor Cyan
+Write-Host "Registry Forensics: Tracking the Dark Kittens Lab by Angel Sayani" -ForegroundColor Cyan
 Write-Host "Cleanup Script" -ForegroundColor Cyan
 Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host ""
