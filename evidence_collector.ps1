@@ -3,7 +3,7 @@
 # This script helps collect and document registry findings
 
 Write-Host "========================================================" -ForegroundColor Cyan
-Write-Host "Registry Forensics Lab: Tracking the Dark Kittens" -ForegroundColor Cyan
+Write-Host "Registry Forensics: Tracking the Dark Kittens Lab by Angel Sayani" -ForegroundColor Cyan
 Write-Host "Registry Evidence Collector" -ForegroundColor Cyan
 Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host ""
