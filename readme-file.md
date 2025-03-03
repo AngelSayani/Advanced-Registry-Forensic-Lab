@@ -1,14 +1,18 @@
 # Registry Forensics Lab: Tracking the Dark Kittens
 
-## Overview
+## Background Story
 
-The notorious hacking group Dark Kittens has struck again! Globomantics, an international conglomerate that runs an artificial island in the Gulf of Mexico for their "ideal society" experiment, has fallen victim to repeated attacks. As a security analyst for Globomantics, your task is to investigate the compromised system, identify how the Dark Kittens maintain persistence, and collect forensic evidence of their activities.
+The notorious hacking group Dark Kittens has struck again! Globomantics, an international conglomerate that runs an artificial island in the Gulf of Mexico for their "ideal society" experiment, has detected unusual activity on one of their administrator workstations. Their security team has reason to believe that the Dark Kittens have compromised the system and are using Windows Registry modifications to maintain persistence.
+As a security engineer contracted by Globomantics, your mission is to investigate the compromised system's registry for evidence of the attack, identify the persistence mechanisms being used, and collect forensic evidence that could help track down the attackers.
 
 This lab focuses on Windows Registry forensics, providing a safe environment to learn and practice identifying common registry-based persistence techniques used by attackers.
 
+## Important Safety Note
+This lab has been designed to be completely safe for your host system. All registry modifications are contained to a dedicated test key under HKCU\Software\DarkKittensLab, which will not affect system operations. The cleanup script will remove all test registry keys created during the lab.
+
 ## Lab Environment
 
-This lab is designed to run entirely on a Windows 10 Home system with PowerShell, without requiring any virtual machines or cloud resources. The lab creates a safe, isolated testing environment within the Windows Registry that simulates a compromised system without affecting your actual system's security or stability.
+This lab is designed to run entirely on a Windows system with PowerShell, without requiring any virtual machines or cloud resources. The lab creates a safe, isolated testing environment within the Windows Registry that simulates a compromised system without affecting your actual system's security or stability.
 
 ## Prerequisites
 
