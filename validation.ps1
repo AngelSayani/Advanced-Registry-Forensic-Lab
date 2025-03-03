@@ -1,5 +1,3 @@
-
-
 Write-Host "Starting validation..." -ForegroundColor Green
 
 # Check lab environment
