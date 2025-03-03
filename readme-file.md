@@ -24,6 +24,8 @@ This lab is designed to run entirely on a Windows system with PowerShell, withou
 
 This lab runs entirely on your local machine and does not require any network connections. The environment is contained within a dedicated registry key (`HKCU:\Software\DarkKittensLab`) that simulates various registry artifacts of a compromised system.
 
+![Network Diagram](network_diagram.png)
+
 ```
 +-----------------------------------------------------+
 |                  Your Windows 10 PC                 |
