@@ -1,4 +1,4 @@
-# Registry Forensics Lab: Tracking the Dark Kittens
+# Advanced Windows Registry Forensics Lab: Tracking the Dark Kittens
 
 ## Background Story
 
