@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f5f7fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Registry Forensics Lab: Environment Architecture</text>
+  
+  <!-- Main Windows 10 PC Box -->
+  <rect x="100" y="80" width="600" height="380" rx="10" ry="10" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" />
+  <text x="400" y="110" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Windows 10 PC (Host System)</text>
+  
+  <!-- PowerShell Environment -->
+  <rect x="130" y="130" width="540" height="310" rx="5" ry="5" fill="#d6eaf8" stroke="#3498db" stroke-width="2" />
+  <text x="400" y="155" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2980b9">PowerShell Environment</text>
+  
+  <!-- Registry Container -->
+  <rect x="150" y="170" width="250" height="250" rx="5" ry="5" fill="#e8f8f5" stroke="#16a085" stroke-width="2" />
+  <text x="275" y="190" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#16a085">Windows Registry (Isolated Area)</text>
+  
+  <!-- Registry Components -->
+  <rect x="170" y="210" width="210" height="30" rx="3" ry="3" fill="#abebc6" stroke="#16a085" stroke-width="1" />
+  <text x="275" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">HKCU:\Software\DarkKittensLab</text>
+  
+  <rect x="170" y="250" width="210" height="30" rx="3" ry="3" fill="#abebc6" stroke="#16a085" stroke-width="1" />
+  <text x="275" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Artifacts (Simulated Malware)</text>
+  
+  <rect x="170" y="290" width="210" height="30" rx="3" ry="3" fill="#abebc6" stroke="#16a085" stroke-width="1" />
+  <text x="275" y="310" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Configuration Settings</text>
+  
+  <rect x="170" y="330" width="210" height="30" rx="3" ry="3" fill="#abebc6" stroke="#16a085" stroke-width="1" />
+  <text x="275" y="350" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Evidence Collection Data</text>
+  
+  <rect x="170" y="370" width="210" height="30" rx="3" ry="3" fill="#abebc6" stroke="#16a085" stroke-width="1" />
+  <text x="275" y="390" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Workspace (Analysis Area)</text>
+  
+  <!-- Script/Tools Container -->
+  <rect x="420" y="170" width="230" height="250" rx="5" ry="5" fill="#ebdef0" stroke="#8e44ad" stroke-width="2" />
+  <text x="535" y="190" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#8e44ad">Scripts and Analysis Tools</text>
+  
+  <!-- Tools Components -->
+  <rect x="440" y="210" width="190" height="30" rx="3" ry="3" fill="#d2b4de" stroke="#8e44ad" stroke-width="1" />
+  <text x="535" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">setup.ps1 & create_artifacts.ps1</text>
+  
+  <rect x="440" y="250" width="190" height="30" rx="3" ry="3" fill="#d2b4de" stroke="#8e44ad" stroke-width="1" />
+  <text x="535" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">forensic_tools.ps1</text>
+  
+  <rect x="440" y="290" width="190" height="30" rx="3" ry="3" fill="#d2b4de" stroke="#8e44ad" stroke-width="1" />
+  <text x="535" y="310" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">evidence_collector.ps1</text>
+  
+  <rect x="440" y="330" width="190" height="30" rx="3" ry="3" fill="#d2b4de" stroke="#8e44ad" stroke-width="1" />
+  <text x="535" y="350" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">analysis_guide.ps1</text>
+  
+  <rect x="440" y="370" width="190" height="30" rx="3" ry="3" fill="#d2b4de" stroke="#8e44ad" stroke-width="1" />
+  <text x="535" y="390" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">validation.ps1 & cleanup.ps1</text>
+  
+  <!-- Connections -->
+  <line x1="380" y1="230" x2="440" y2="230" stroke="#2c3e50" stroke-width="2" />
+  <line x1="380" y1="270" x2="440" y2="270" stroke="#2c3e50" stroke-width="2" />
+  <line x1="380" y1="310" x2="440" y2="310" stroke="#2c3e50" stroke-width="2" />
+  <line x1="380" y1="350" x2="440" y2="350" stroke="#2c3e50" stroke-width="2" />
+  <line x1="380" y1="390" x2="440" y2="390" stroke="#2c3e50" stroke-width="2" />
+  
+  <!-- Output Areas -->
+  <rect x="170" y="430" width="500" height="20" rx="3" ry="3" fill="#f9e79f" stroke="#f39c12" stroke-width="1" />
+  <text x="420" y="445" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Reports and Evidence Files (C:\Users\[Username]\Documents\RegistryForensicsLab\)</text>
+  
+  <!-- Legend -->
+  <rect x="650" y="430" width="15" height="15" fill="#e8f8f5" stroke="#16a085" stroke-width="1" />
+  <text x="670" y="443" font-family="Arial" font-size="10" fill="#2c3e50">Registry Areas</text>
+  
+  <rect x="650" y="450" width="15" height="15" fill="#ebdef0" stroke="#8e44ad" stroke-width="1" />
+  <text x="670" y="463" font-family="Arial" font-size="10" fill="#2c3e50">PowerShell Scripts</text>
+  
+  <rect x="650" y="470" width="15" height="15" fill="#f9e79f" stroke="#f39c12" stroke-width="1" />
+  <text x="670" y="483" font-family="Arial" font-size="10" fill="#2c3e50">Output Files</text>
+
+  <!-- Footer -->
+  <text x="400" y="490" font-family="Arial" font-size="10" font-style="italic" text-anchor="middle" fill="#7f8c8d">Note: All components run on a single Windows 10 PC - no network connectivity required</text>
+</svg>
