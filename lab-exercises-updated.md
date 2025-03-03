@@ -62,7 +62,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
    }
    ```
 
-### Phase 3: Creating Artifacts
+### Phase 3: Creating Artifacts (create_artifacts.ps1)
 
 9. **Run the Artifacts Creation Script**
    - Type: `.\create_artifacts.ps1`
@@ -90,7 +90,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
 
 ### Phase 5: Conducting the Investigation
 
-11. **Follow the Guided Analysis**
+11. **Follow the Guided Analysis (analysis_guide.ps1)**
    - Type: `.\analysis_guide.ps1`
    - Press Enter
    - For each step in the guided analysis:
@@ -105,7 +105,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
      - Type "Y" to run the evidence collector
      - Follow the evidence collection process as guided
 
-12. **Use the Forensic Tools**
+12. **Identify Malicious Registry Entries (forensic_tools.ps1)**
    - Type: `.\forensic_tools.ps1`
    - Press Enter
    - When the menu appears, try each of these tasks:
@@ -130,7 +130,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
 
    - Exit the tool by selecting option 10 when done
 
-### Phase 6: Collecting and Documenting Evidence
+### Phase 6: Collecting and Documenting Evidence (evidence_collector.ps1)
 
 13. **Collect Evidence**
     - Type: `.\evidence_collector.ps1`
@@ -165,7 +165,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
    - Service-based persistence
    - File association hijacking
 
-15. **Validate Your Findings**
+15. **Validate Your Findings (validation.ps1)**
     - Return to PowerShell
     - Type: `.\validation.ps1`
     - Press Enter
@@ -200,7 +200,7 @@ Follow these detailed steps to complete the lab. Each step includes specific ins
     - Check that your security improvements are recognized
     - Your score should increase if they are properly implemented
    
-## Phase 8: Registry Differential Analysis
+## Phase 8: Registry Differential Analysis (registry_diff.ps1)
 
 ### Exercise 8: Compare Registry States
 
