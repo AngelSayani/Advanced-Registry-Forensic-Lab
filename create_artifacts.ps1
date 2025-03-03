@@ -3,7 +3,7 @@
 # This script creates simulated malicious registry artifacts in the safe test area
 
 Write-Host "========================================================" -ForegroundColor Cyan
-Write-Host "Registry Forensics Lab: Tracking the Dark Kittens" -ForegroundColor Cyan
+Write-Host "Registry Forensics: Tracking the Dark Kittens Lab by Angel Sayani" -ForegroundColor Cyan
 Write-Host "Creating Simulated Malicious Registry Artifacts" -ForegroundColor Cyan
 Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host ""
